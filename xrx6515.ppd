@@ -4,7 +4,7 @@
 *% Copyright 2009-2010 Xerox Corporation.
 
 
-*FileVersion: "5.620.0.0"
+*FileVersion: "5.620.0.1"
 *FormatVersion: "4.3"
 *LanguageEncoding: ISOLatin1
 *LanguageVersion: English
@@ -325,7 +325,7 @@
 
 *OpenUI *PageSize/Media Size: PickOne
 *OrderDependency: 10 AnySetup *PageSize
-*DefaultPageSize: Letter
+*DefaultPageSize: A4
 *PageSize Letter/Letter (8.5 x 11"): "2 dict dup /PageSize [612 792] put dup /CustomPageSize false put setpagedevice"
 *PageSize Legal/Legal (8.5 x 14"): "2 dict dup /PageSize [612 1008] put dup /CustomPageSize false put setpagedevice"
 *PageSize Statement/Statement (5.5 x 8.5"): "2 dict dup /PageSize [396 612] put dup /CustomPageSize false put setpagedevice"
@@ -348,7 +348,7 @@
 
 *OpenUI *PageRegion: PickOne
 *OrderDependency: 10 AnySetup *PageRegion
-*DefaultPageRegion: Letter
+*DefaultPageRegion: A4
 *PageRegion Letter/Letter (8.5 x 11"): "2 dict dup /PageSize [612 792] put dup /CustomPageSize false put setpagedevice"
 *PageRegion Legal/Legal (8.5 x 14"): "2 dict dup /PageSize [612 1008] put dup /CustomPageSize false put setpagedevice"
 *PageRegion Statement/Statement (5.5 x 8.5"): "2 dict dup /PageSize [396 612] put dup /CustomPageSize false put setpagedevice"
@@ -369,7 +369,7 @@
 *PageRegion EnvC5/C5 Envelope (162 x 229 mm): "2 dict dup /PageSize [459 649] put dup /CustomPageSize false put setpagedevice"
 *CloseUI: *PageRegion
 
-*DefaultImageableArea: Letter
+*DefaultImageableArea: A4
 *ImageableArea Letter/Letter (8.5 x 11"): "14.199999809265 14.199999809265 597.799987792969 777.799987792969"
 *ImageableArea Legal/Legal (8.5 x 14"): "14.199999809265 14.199999809265 597.799987792969 993.799987792969"
 *ImageableArea Statement/Statement (5.5 x 8.5"): "11.34 11.34 384.66 600.66"
@@ -390,7 +390,7 @@
 *ImageableArea EnvC5/C5 Envelope (162 x 229 mm): "14.199999809265 14.199999809265 444.799987792969 634.799987792969"
 
 
-*DefaultPaperDimension: Letter
+*DefaultPaperDimension: A4
 *PaperDimension Letter/Letter (8.5 x 11"): "612 792"
 *PaperDimension Legal/Legal (8.5 x 14"): "612 1008"
 *PaperDimension Statement/Statement (5.5 x 8.5"): "396 612"
@@ -431,7 +431,8 @@
 
 *OpenUI *InputSlot/InputSlot: PickOne
 *OrderDependency: 10 AnySetup *InputSlot
-*DefaultInputSlot: Tray1
+*DefaultInputSlot: Auto
+*InputSlot Auto/Automatically Select: ""
 *InputSlot Tray1/Tray 1: "<< (tray-1) xerox$MediaInputTray >> setpagedevice"
 *InputSlot Tray2/Tray 2: "<< (tray-2) xerox$MediaInputTray >> setpagedevice"
 *InputSlot Bypass/Bypass Tray: "<< (bypass-tray) xerox$MediaInputTray >> setpagedevice"
@@ -465,7 +466,7 @@
 
 *OpenUI *MediaColor/Media Color: PickOne
 *OrderDependency: 10 AnySetup *MediaColor
-*DefaultMediaColor: White
+*DefaultMediaColor: Unspecified
 *MediaColor Unspecified/Automatically Select: "1 dict dup /MediaColor (use-ready) put setpagedevice"
 *MediaColor SystemDefault/Printer Default Color: "1 dict dup /MediaColor (system-default) put setpagedevice"
 *MediaColor White/White: "1 dict dup /MediaColor (white) put setpagedevice"
