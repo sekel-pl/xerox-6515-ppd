@@ -4,7 +4,7 @@
 *% Copyright 2009-2010 Xerox Corporation.
 
 
-*FileVersion: "5.620.0.1"
+*FileVersion: "5.662.0.1"
 *FormatVersion: "4.3"
 *LanguageEncoding: ISOLatin1
 *LanguageVersion: English
@@ -101,6 +101,7 @@
 *UIConstraints: *Duplex *PageSize EnvDL
 *UIConstraints: *Duplex *PageSize EnvC5
 *UIConstraints: *Duplex *PageSize A6
+*UIConstraints: *Duplex *PageSize B5
 *UIConstraints: *Duplex *PageSize B6
 *UIConstraints: *Duplex *PageSize 4x6Postcard
 *UIConstraints: *Duplex *PageSize 5x7
@@ -113,6 +114,8 @@
 *% Media size v/s Tray Constraints
 *UIConstraints: *PageSize A6 *InputSlot Tray2
 
+*UIConstraints: *PageSize B5 *InputSlot Tray1
+*UIConstraints: *PageSize B5 *InputSlot Bypass
 *UIConstraints: *PageSize B6 *InputSlot Tray1
 *UIConstraints: *PageSize B6 *InputSlot Tray2
 
@@ -336,6 +339,7 @@
 *PageSize A4/A4 (210 x 297 mm): "2 dict dup /PageSize [595 842] put dup /CustomPageSize false put setpagedevice"
 *PageSize A5/A5 (148 x 210 mm): "2 dict dup /PageSize [420 595] put dup /CustomPageSize false put setpagedevice"
 *PageSize A6/A6 (105 x 148 mm): "2 dict dup /PageSize [297 420] put dup /CustomPageSize false put setpagedevice"
+*PageSize B5/JIS B5 (182 x 257 mm): "2 dict dup /PageSize [516 729] put dup /CustomPageSize null put setpagedevice"
 *PageSize B6/JIS B6 (128 x 182 mm): "2 dict dup /PageSize [363 516] put dup /CustomPageSize null put setpagedevice"
 *PageSize 4x6Postcard/Postcard (4 x 6"): "2 dict dup /PageSize [288 432] put dup /CustomPageSize false put setpagedevice"
 *PageSize 5x7/5 x 7": "2 dict dup /PageSize [360 504] put dup /CustomPageSize false put setpagedevice"
@@ -359,6 +363,7 @@
 *PageRegion A4/A4 (210 x 297 mm): "2 dict dup /PageSize [595 842] put dup /CustomPageSize false put setpagedevice"
 *PageRegion A5/A5 (148 x 210 mm): "2 dict dup /PageSize [420 595] put dup /CustomPageSize false put setpagedevice"
 *PageRegion A6/A6 (105 x 148 mm): "2 dict dup /PageSize [297 420] put dup /CustomPageSize false put setpagedevice"
+*PageRegion B5/JIS B5 (182 x 257 mm): "2 dict dup /PageSize [516 729] put dup /CustomPageSize null put setpagedevice"
 *PageRegion B6/JIS B6 (128 x 182 mm): "2 dict dup /PageSize [363 516] put dup /CustomPageSize null put setpagedevice"
 *PageRegion 4x6Postcard/Postcard (4 x 6"): "2 dict dup /PageSize [288 432] put dup /CustomPageSize false put setpagedevice"
 *PageRegion 5x7/5 x 7": "2 dict dup /PageSize [360 504] put dup /CustomPageSize false put setpagedevice"
@@ -380,6 +385,7 @@
 *ImageableArea A4/A4 (210 x 297 mm): "14.199999809265 14.199999809265 580.799987792969 827.799987792969"
 *ImageableArea A5/A5 (148 x 210 mm): "14.199999809265 14.199999809265 405.799987792969 580.799987792969"
 *ImageableArea A6/A6 (105 x 148 mm): "11.34 11.34 285.66 408.66"
+*ImageableArea B5/JIS B5 (182 x 257 mm): "14.199999809265 14.199999809265 501.799987792969 714.799987792969"
 *ImageableArea B6/JIS B6 (128 x 182 mm): "11.34 11.34 351.66 504.66"
 *ImageableArea 4x6Postcard/Postcard (4 x 6"): "11.34 11.34 276.66 420.66"
 *ImageableArea 5x7/5 x 7": "11.34 11.34 348.66 492.66"
@@ -400,6 +406,7 @@
 *PaperDimension A4/A4 (210 x 297 mm): "595 842"
 *PaperDimension A5/A5 (148 x 210 mm): "420 595"
 *PaperDimension A6/A6 (105 x 148 mm): "297 420"
+*PaperDimension B5/JIS B5 (182 x 257 mm): "516 729"
 *PaperDimension B6/JIS B6 (128 x 182 mm): "363 516"
 *PaperDimension 4x6Postcard/Postcard (4 x 6"): "288 432"
 *PaperDimension 5x7/5 x 7": "360 504"
@@ -498,7 +505,9 @@
 *Duplex DuplexTumble/2-Sided Print, Flip on Short Edge: "<< /Duplex true /Tumble true >> setpagedevice"
 *CloseUI: *Duplex
 
-*OpenSubGroup: PrintQuality/Print Quality/Color
+*CloseGroup: PaperOutput
+
+*OpenGroup: PrintQuality/Print Quality/Color
 
 *OpenUI *OutputMode/Print Quality: PickOne
 *OrderDependency: 46.0 AnySetup *OutputMode
@@ -523,9 +532,7 @@
 *End
 *CloseUI: *OutputMode
 
-*CloseSubGroup: PrintQuality
-
-*CloseGroup: PaperOutput
+*CloseGroup: PrintQuality
 
 *JCLBegin:"<1B>%-12345X@PJL JOB<0A>"
 
